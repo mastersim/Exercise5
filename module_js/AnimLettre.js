@@ -43,13 +43,18 @@ export class AnimLettre {
             this.lesLettres
             )*/
 
-        for(let i = lesLettres.length; i > lesLettres; i--){
+        for(let i = 0; i < lesLettres.length; i++){
 
-            uneLettre = lesLettres[i];
+            let uneLettre = lesLettres[i];
             console.log(i);
 
-            uneLettre.style.animationDelay = (i * 0.5) + "s";
-			uneLettre.style.color = tabCouleur[(i++)%7]
+            let elmLettre = this.creerElement(elmConteneur,
+                'div',
+                uneLettre,
+                '')
+
+                uneLettre.style.animationDelay = (i * 0.5) + "s";
+                uneLettre.style.color = tabCouleur[(i++)%7]
         }
 
     }
@@ -64,7 +69,6 @@ export class AnimLettre {
         if(classCSS != ''){
             noeud.classList.add(classCSS)
         }
-        noeud.classList.add(classCSS)
         elmParent.appendChild(noeud)
         return noeud
     }
