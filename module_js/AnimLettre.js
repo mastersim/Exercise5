@@ -14,28 +14,43 @@ export class AnimLettre {
      }}
      */
 
+     
+
     constructor(lesLettres, elementParent, fonction) {
         //Récupérer les valeurs passées en paramètre
         this.lesLettres = lesLettres			
         this.elmParent = elementParent
         this.animationLettre(this.lesLettres)
         this.fonction = fonction
+
     }
 
 
     animationLettre(lesLettres) {
 
+
+        let nbLettres = lesLettres.length;
        console.log(`lesLettres =  ${lesLettres}`);
        let elmConteneur = this.creerElement(this.elmParent,
         'section',
         '',
-        'introduction')
+        'mot')
 
+        /*console.log(nbLettres);*/
     
-        let elmBouton = this.creerElement(elmConteneur,
+       /* let elmBouton = this.creerElement(elmConteneur,
             'p',
             this.lesLettres
-            )
+            )*/
+
+        for(let i = lesLettres.length; i > lesLettres; i--){
+
+            uneLettre = lesLettres[i];
+            console.log(i);
+
+            uneLettre.style.animationDelay = (i * 0.5) + "s";
+			uneLettre.style.color = tabCouleur[(i++)%7]
+        }
 
     }
 
@@ -54,4 +69,8 @@ export class AnimLettre {
         return noeud
     }
 
+
+
+    
+    
 }
