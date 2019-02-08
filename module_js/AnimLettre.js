@@ -24,9 +24,34 @@ export class AnimLettre {
 
 
     animationLettre(lesLettres) {
+
        console.log(`lesLettres =  ${lesLettres}`);
+       let elmConteneur = this.creerElement(this.elmParent,
+        'section',
+        '',
+        'introduction')
+
+    
+        let elmBouton = this.creerElement(elmConteneur,
+            'p',
+            this.lesLettres
+            )
+
     }
 
     
+    creerElement(elmParent, balise, contenu, classCSS) {
+        console.log(balise)
+        let noeud = document.createElement(balise)
+        if (contenu != '') {
+            noeud.innerHTML = contenu
+        }
+        if(classCSS != ''){
+            noeud.classList.add(classCSS)
+        }
+        noeud.classList.add(classCSS)
+        elmParent.appendChild(noeud)
+        return noeud
+    }
 
 }
