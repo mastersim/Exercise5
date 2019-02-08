@@ -53,8 +53,8 @@ export class AnimLettre {
                 uneLettre,
                 '')
 
-                uneLettre.style.animationDelay = (i * 0.5) + "s";
-                uneLettre.style.color = tabCouleur[(i++)%7]
+                elmLettre.style.animationDelay = (i * 0.5) + "s";
+                //elmLettre.style.color = tabCouleur[(i++)%7]
         }
 
     }
